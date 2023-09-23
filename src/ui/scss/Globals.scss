@@ -1,0 +1,111 @@
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+}
+
+.toast-body {
+  background-color: $color-secondary;
+  color: #ffffff;
+}
+
+.form-control {
+  padding: 4px;
+}
+
+.menu-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caret-icon {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg); /* Estado inicial, apuntando hacia la derecha */
+}
+
+.caret-icon.open {
+  transform: rotate(90deg); /* Estado abierto, apuntando hacia abajo */
+}
+.menucaretwhite {
+  height: 6px;
+  filter: invert(100%) brightness(100%);
+}
+
+.home {
+  .form-errors {
+    color: #d30e0e;
+  }
+  .flex-form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header {
+    position: absolute; /* o puedes probar con relative si prefieres */
+    top: 0; /* esto asegura que esté alineado en la parte superior */
+    left: 0; /* esto asegura que esté alineado a la izquierda */
+    width: 100%; /* esto asegura que ocupe todo el ancho de su contenedor */
+    z-index: 1000; /* un valor alto para garantizar que esté por encima de los demás elementos */
+    background-color: transparent;
+    padding: 14px;
+    color: #ffffff;
+  }
+
+  .logoblanco {
+    height: 55px;
+  }
+  label {
+    font-size: 13px;
+  }
+  .carousel {
+    background-color: #000;
+  }
+  .carousel-item {
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    opacity: 0.5;
+  }
+
+  .custom-caption {
+    text-align: left;
+    font-weight: 600;
+    width: 68%;
+    top: 36%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    h3 {
+      text-shadow: 2px 2px 3px #000;
+      font-size: 3vw;
+    }
+
+    p {
+      font-size: 1.8vw;
+      text-shadow: 2px 2px 2px #000;
+      font-weight: 400 !important;
+      font-family: "Playfair Display", serif;
+    }
+  }
+
+  .positioner {
+    margin-top: -80px !important;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .more-margin {
+    margin-top: 130px;
+  }
+}

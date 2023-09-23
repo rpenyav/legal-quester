@@ -1,0 +1,51 @@
+legal-quester/
+│
+├── src/
+│   ├── domain/                        # Capa de Dominio
+│   │   ├── entities/                  # Entidades del negocio (clases o funciones)
+│   │   │   ├── Usuario.js
+│   │   │   ├── Producto.js
+│   │   │   └── ...
+│   │   ├── useCases/                  # Operaciones o casos de uso del negocio
+│   │   │   ├── registrarUsuario.js
+│   │   │   ├── comprarProducto.js
+│   │   │   └── ...
+│   │   └── ...
+│   │
+│   ├── app/                           # Capa de Aplicación
+│   │   ├── api/                       # Funciones para llamadas a API
+│   │   ├── state/                     # Gestión de estados (Redux/MobX/Context)
+│   │   │   ├── hooks/                 # Hooks personalizados relacionados con el estado
+│   │   │   ├── context/               # Contextos (si usas Context API)
+│   │   │   └── ...
+│   │   └── ...
+│   │
+│   ├── ui/                            # Capa de Presentación (React)
+│   │   ├── components/                # Componentes reutilizables
+│   │   │   ├── Button/
+│   │   │   ├── Modal/
+│   │   │   └── ...
+│   │   ├── pages/                     # Componentes de página (o vistas)
+│   │   │   ├── Home/
+│   │   │   ├── Profile/ 
+│   │   │   └── ...
+│   │   ├── routes/                    # Rutas (si usas react-router u otra librería)
+│   │   ├── styles/                    # Estilos (CSS, SCSS, Styled Components, etc.)
+│   │   └── ...
+│   │
+│   ├── infrastructure/                # Capa de Infraestructura
+│   │   ├── db/                        # Funciones relacionadas con la base de datos
+│   │   └── ...
+│   │
+│   ├── types/                         # Interfaces o tipos de datos (si usas TypeScript)
+│   │   ├── usuario.d.ts
+│   │   ├── producto.d.ts
+│   │   └── ...
+│   │
+│   └── index.js                       # Entrada principal de la aplicación
+│
+├── public/
+│   ├── index.html
+│   └── ...
+│
+└── package.json
