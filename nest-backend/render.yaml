@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: nest-backend
+    repo: https://github.com/rpenya-pro/legal-quester
+    branch: main
+    env: node
+    workingDirectory: nest-backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start

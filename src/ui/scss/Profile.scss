@@ -1,0 +1,105 @@
+.profile {
+  .avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .modal-lg {
+    --bs-modal-width: 70% !important;
+  }
+
+  .contenedor-sticky-button {
+    min-height: 100vh; /* O cualquier otra altura que necesites */
+    position: relative; /* Esto es necesario para que el sticky funcione */
+  }
+}
+
+.thumbs-container {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.thumb {
+  display: inline-flex;
+  border-radius: 2px;
+  border: 1px solid #eaeaea;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  width: auto;
+  height: auto;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.thumb-inner {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  align-items: center; // Centrar verticalmente
+  justify-content: center !important; // Centrar horizontalmente
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto; // Esto también ayuda a centrar la imagen
+  object-fit: cover;
+}
+
+.dropzone {
+  border-radius: 10px;
+  background-color: #f3f3f3; // Gris clarito
+  border: 2px dotted #ccc; // Borde punteado
+  display: flex; // Utilizar flexbox para alinear el contenido
+  justify-content: center; // Centrar el contenido horizontalmente
+  align-items: center; // Centrar el contenido verticalmente
+  text-align: center; // Alinear el texto al centro
+  padding: 20px; // Espaciado interior para una mejor apariencia
+  padding-top: 40px;
+  min-height: 250px;
+  color: #ccc;
+  cursor: pointer; // Cambiar el cursor a "mano" al pasar por encima
+}
+
+.foto-perfil {
+  width: 100%;
+}
+
+.button-plus {
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  line-height: 0px;
+  background-color: transparent;
+  color: transparent;
+  border: 0px;
+}
+.button-plus-disabled {
+  color: #ccc !important;
+  background-color: transparent !important;
+}
+
+.button-plus:hover {
+  background-color: transparent;
+}
+.button-plus:active {
+  background-color: transparent;
+}
+.button-plus:focus {
+  background-color: transparent !important;
+}
+
+.icono-eliminar {
+  width: 13px;
+}
+.icono-anyadir {
+  width: 20px;
+}
+
+.icon-save {
+  width: 40px;
+}

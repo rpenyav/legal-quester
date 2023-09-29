@@ -1,0 +1,166 @@
+.dashboard {
+  .header {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    padding-top: 15px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .header.shrink {
+    height: 75px;
+    padding: 0 15px;
+    padding-top: 10px;
+  }
+
+  .logotipo {
+    height: 64px;
+    transition: all 0.3s ease;
+  }
+
+  .header.shrink .logotipo {
+    height: 50px;
+  }
+
+  .content-topper {
+    margin-top: 150px !important;
+  }
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Escondido a la izquierda */
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s;
+    z-index: 999; /* para asegurarnos de que esté encima de otros elementos */
+    padding: 20px; /* Espaciado interno */
+  }
+
+  .drawer.open {
+    left: 0; /* Aparece a la vista */
+  }
+
+  .drawer-tab {
+    position: fixed;
+    top: 11%;
+    left: 23px;
+    width: 50px;
+    height: 110px;
+    background-color: $color-secondary;
+    color: white;
+    text-align: center;
+    box-shadow: 3px 3px 3px #b6b6b6;
+    line-height: 40px;
+    cursor: pointer;
+    transform: translateX(-50%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .drawer-tab:hover {
+    background-color: #afafaf;
+  }
+
+  .menu-text-tab {
+    display: block;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    font-weight: 300;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .drawer-tab:active {
+    box-shadow: 1px 3px 6px #636363;
+  }
+
+  .form-control-global {
+    border: 0px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 4px;
+    padding-right: 16px;
+  }
+  .form-control-search {
+    padding: 6px;
+    width: 100% !important;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+  }
+
+  .form-control-search-date {
+    width: 100% !important;
+    padding: 6px;
+    background: url("../../assets/calendar-icon.svg") no-repeat right;
+    background-size: 20px;
+    background-position: calc(100% - 8px) center;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+  }
+
+  option {
+    background-color: #f1f4f5;
+    /* Otros estilos (podrían no funcionar en todos los navegadores) */
+  }
+
+  .form-control-search-container,
+  .form-control-search-container > div.react-datepicker-wrapper,
+  .form-control-search-container
+    > div
+    > div.react-datepicker__input-container
+    .form-control-search-container
+    > div
+    > div.react-datepicker__input-container
+    input {
+    width: 100%;
+  }
+
+  .logo-company {
+    width: 80px;
+  }
+
+  .dashboard-card {
+    h3 {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .description-text {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    hr {
+      padding: 0;
+      margin: 0;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      border: none;
+      border-top: 1px solid rgb(185, 185, 185);
+    }
+
+    .share-icon {
+      height: 17px;
+      margin-right: 5px;
+    }
+  }
+  .card-hover:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+
+  .detail {
+    .label-date {
+    }
+
+    .description {
+    }
+  }
+}
