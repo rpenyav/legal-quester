@@ -6,27 +6,37 @@ interface FileWithPreview extends File {
 }
 
 interface UploadImageProps {
-  onFilesChanged: (acceptedFiles: File[]) => void;
+  onFilesChanged: (acceptedFiles: File[], previewUrl?: string) => void;
+  resetPreview?: () => void;
 }
-
-const UploadImage: FC<UploadImageProps> = ({ onFilesChanged }) => {
+const UploadImage: FC<UploadImageProps> = ({
+  onFilesChanged,
+  resetPreview,
+}) => {
   const [files, setFiles] = useState<FileWithPreview[]>([]);
+  const resetFiles = () => setFiles([]);
+
+  useEffect(() => {
+    if (resetPreview) {
+      resetFiles();
+      onFilesChanged([]);
+    }
+  }, [resetPreview, onFilesChanged]);
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*" as any,
     onDrop: (acceptedFiles) => {
-      setFiles(
-        acceptedFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          })
-        )
+      const mappedFiles = acceptedFiles.map((file) =>
+        Object.assign(file, {
+          preview: URL.createObjectURL(file),
+        })
       );
 
+      setFiles(mappedFiles);
+
       if (acceptedFiles.length > 0) {
-        onFilesChanged(acceptedFiles);
-        // Generamos un nombre temporal basado en la marca temporal actual
-        const tempFileName = "temp_" + new Date().getTime();
+        // Pasando el archivo y su URL de vista previa al componente padre
+        onFilesChanged(acceptedFiles, mappedFiles[0].preview);
       }
     },
   });

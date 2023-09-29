@@ -112,8 +112,10 @@ export const useUserData = (identificador: string | undefined) => {
       file,
     }: {
       dataToUpdate: Partial<Usuario>;
-      file: File | null;
-    }) => uploadAndSaveUserData(identificador!, dataToUpdate, file)
+      file?: File | null;
+    }) => {
+      return uploadAndSaveUserData(identificador!, dataToUpdate, file!);
+    }
   );
 
   useEffect(() => {

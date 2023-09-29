@@ -30,6 +30,15 @@ export const useDashboardData = (dataUser: Usuario | null) => {
 
   // Extraer los datos para candidatos
   const {
+    email,
+    password,
+    telephone,
+    isActive,
+    profileImage,
+    lastLogin,
+    isVerified,
+    notifications,
+    avatar,
     jobTitle,
     educationLevel,
     languages,
@@ -37,10 +46,28 @@ export const useDashboardData = (dataUser: Usuario | null) => {
     portfolioUrl,
     resumeUrl,
     availability,
+    projects,
+    signupDate,
+    isCompany,
+    curriculum,
+    skills,
+    previousProjects,
+    appliedProjects,
+    preferences,
+    peopleBlocked,
   } = dataUser || {};
 
   const candidateData = useMemo(
     () => ({
+      email,
+      password,
+      telephone,
+      isActive,
+      profileImage,
+      lastLogin,
+      isVerified,
+      notifications,
+      avatar,
       jobTitle,
       educationLevel,
       languages,
@@ -48,6 +75,15 @@ export const useDashboardData = (dataUser: Usuario | null) => {
       portfolioUrl,
       resumeUrl,
       availability,
+      projects,
+      signupDate,
+      isCompany,
+      curriculum,
+      skills,
+      previousProjects,
+      appliedProjects,
+      preferences,
+      peopleBlocked,
     }),
     [dataUser]
   );
@@ -56,12 +92,13 @@ export const useDashboardData = (dataUser: Usuario | null) => {
   const isCompanyMenu = useMemo(
     () => [
       {
-        title: "Publicar Nuevo Caso",
-        link: "/new-case",
+        title: "Nuevos Casos",
+        link: "/publicar/company/",
         subMenu: [
-          { title: "Formulario de detalles del caso", link: "/case-details" },
-          { title: "Cuestionario opcional", link: "/optional-quiz" },
-          { title: "Solicitar documentos", link: "/request-documents" },
+          { title: "Publicar nuevo caso", link: "/publicar/company/" },
+          // { title: "Formulario de detalles del caso", link: "/publicar/company/" },
+          // { title: "Cuestionario opcional", link: "/optional-quiz" },
+          // { title: "Solicitar documentos", link: "/request-documents" },
         ],
       },
       {

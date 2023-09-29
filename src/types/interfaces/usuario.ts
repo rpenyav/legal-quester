@@ -1,9 +1,15 @@
-import { Proyecto } from "./";
+import { Proyecto } from "./proyecto";
+
+export interface Preference {
+  typeOfProjects?: string[];
+  cityOfProjects?: string[];
+  areaLegalProjects?: string[];
+}
 
 export interface Usuario {
   // Campos comunes
   _id?: string;
-  email: string;
+  email?: string;
   password?: string;
   telephone?: string;
   isActive?: boolean;
@@ -11,7 +17,7 @@ export interface Usuario {
   lastLogin?: Date;
   isVerified?: boolean;
   notifications?: string[];
-  avatar: string;
+  avatar?: string;
 
   // Campos para usuarios empresa
   companyName?: string;
@@ -38,11 +44,15 @@ export interface Usuario {
   projects?: Proyecto[];
   signupDate?: Date;
   isCompany?: boolean;
-  curriculum?: string;
+  curriculum?: string[];
   skills?: string[];
   previousProjects?: Proyecto[];
   appliedProjects?: Proyecto[];
 
+  // Campos nuevos
+  preferences?: Preference;
+
   peopleBlocked?: Proyecto[];
   tempImage?: File | null;
+  numColegiado?: string;
 }

@@ -3,6 +3,7 @@ import { logoTipo } from "../../assets";
 import { FooterComponent } from "../components";
 import { Drawermenu } from "../components/protected/Drawermenu";
 import { ProfileHeaderMenu } from "../components/protected/ProfileHeaderMenu";
+import { Link } from "react-router-dom";
 
 type LayoutDashboardProps = {
   children: ReactNode;
@@ -34,7 +35,9 @@ const LayoutDashboard: React.FC<LayoutDashboardProps> = ({ children }) => {
               <img src={logoTipo} alt="Legal Quester" className="logotipo" />
             </div>
             <div className="d-flex justify-content-end align-items-center">
-              <div>Dashboard</div>
+              <div>
+                <Link to="/dashboard">Dashboard</Link>
+              </div>
               <div className="ms-3 me-3">|</div>
               <div>
                 <ProfileHeaderMenu />

@@ -10,6 +10,11 @@
   .modal-lg {
     --bs-modal-width: 70% !important;
   }
+
+  .contenedor-sticky-button {
+    min-height: 100vh; /* O cualquier otra altura que necesites */
+    position: relative; /* Esto es necesario para que el sticky funcione */
+  }
 }
 
 .thumbs-container {
@@ -58,4 +63,43 @@
   min-height: 250px;
   color: #ccc;
   cursor: pointer; // Cambiar el cursor a "mano" al pasar por encima
+}
+
+.foto-perfil {
+  width: 100%;
+}
+
+.button-plus {
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  line-height: 0px;
+  background-color: transparent;
+  color: transparent;
+  border: 0px;
+}
+.button-plus-disabled {
+  color: #ccc !important;
+  background-color: transparent !important;
+}
+
+.button-plus:hover {
+  background-color: transparent;
+}
+.button-plus:active {
+  background-color: transparent;
+}
+.button-plus:focus {
+  background-color: transparent !important;
+}
+
+.icono-eliminar {
+  width: 13px;
+}
+.icono-anyadir {
+  width: 20px;
+}
+
+.icon-save {
+  width: 40px;
 }

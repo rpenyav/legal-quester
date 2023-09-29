@@ -3,6 +3,7 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 import { useAuth } from "../../../infrastructure";
 import { useUserData } from "../../../app/state/hooks/useUserData";
 import { ModalFillData } from "./modals/ModalFillData";
+import { enmascarar } from "../../../helpers/maskFunctions";
 
 export const ProfileHeaderMenu = () => {
   const { isAuthenticated, userData } = useAuth();
@@ -49,7 +50,13 @@ export const ProfileHeaderMenu = () => {
                 </>
               }
             >
-              <Dropdown.Item href="#/action-1">Perfil</Dropdown.Item>
+              <Dropdown.Item
+                href={`/profile/${isCompany ? "company" : "candidate"}/edit/${
+                  dataUser && enmascarar(dataUser?._id!)
+                }`}
+              >
+                Perfil
+              </Dropdown.Item>
               <Dropdown.Item href="#/action-2">Configuración</Dropdown.Item>
               <Dropdown.Item href="#/action-3">Cerrar sesión</Dropdown.Item>
             </DropdownButton>

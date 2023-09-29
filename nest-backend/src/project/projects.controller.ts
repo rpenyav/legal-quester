@@ -6,9 +6,13 @@ import {
   Param,
   Put,
   Delete,
+  Query,
+  ParseIntPipe,
+  ParseArrayPipe,
 } from '@nestjs/common';
 import { ProyectosService } from './projects.service';
 import { Proyecto } from './model/project.schema';
+import { SearchDto } from './dto/search.dto';
 
 @Controller('projects')
 export class ProyectoController {
@@ -20,8 +24,37 @@ export class ProyectoController {
   }
 
   @Get()
-  async findAll(): Promise<Proyecto[]> {
-    return this.projectsService.findAll();
+  async getAllProjects(
+    @Query('publishedBy') publishedBy?: string,
+    @Query('tagsProject', new ParseArrayPipe({ optional: true }))
+    tagsProject?: string[],
+    @Query('typeOfCase', new ParseArrayPipe({ optional: true }))
+    typeOfCase?: string[],
+    @Query('cityOfProject', new ParseArrayPipe({ optional: true }))
+    cityOfProject?: string[],
+    @Query('areaLegal', new ParseArrayPipe({ optional: true }))
+    areaLegal?: string[],
+    @Query('page', ParseIntPipe) page: number = 1,
+    @Query('limit', ParseIntPipe) limit: number = 10,
+    @Query('orderBy') orderBy: string = 'asc',
+  ) {
+    const maxTotalLimit = 1000;
+    const result = await this.projectsService.findAllByFiltersWithLimit(
+      publishedBy,
+      tagsProject,
+      typeOfCase,
+      cityOfProject,
+      areaLegal,
+      page,
+      limit,
+      maxTotalLimit,
+      orderBy,
+    );
+
+    return {
+      projects: result.projects,
+      hasMore: result.hasMore,
+    };
   }
 
   @Get(':id')
@@ -40,5 +73,15 @@ export class ProyectoController {
   @Delete(':id')
   async remove(@Param('id') id: string): Promise<Proyecto> {
     return this.projectsService.remove(id);
+  }
+
+  @Post('search')
+  async search(
+    @Query('page') page: number,
+    @Query('limit') limit: number,
+    @Query('orderby') orderby: string,
+    @Body() searchDto: SearchDto,
+  ): Promise<any> {
+    return this.projectsService.search(page, limit, orderby, searchDto);
   }
 }

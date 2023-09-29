@@ -13,6 +13,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt-strategy';
 import { PassportModule } from '@nestjs/passport';
 import { ProyectoModule } from './project/project.module';
+import { QuestionnaireModule } from './questionnaire/questionnaire.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { ProyectoModule } from './project/project.module';
     }),
     UserModule,
     ProyectoModule,
+    QuestionnaireModule,
 
     JwtModule.registerAsync({
       imports: [ConfigModule],

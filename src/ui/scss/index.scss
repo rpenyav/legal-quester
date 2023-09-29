@@ -1,3 +1,5 @@
+@import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
+
 @import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playfair+Display:wght@400;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap");
 
@@ -25,4 +27,5 @@ h4 {
 // @import "./Owner";
 // @import "./Events";
 @import "./LinksAndButtons";
+@import "./Wizard";
 // @import "./Edition";

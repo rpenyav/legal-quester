@@ -6,3 +6,13 @@ export { default as carousel5 } from "./scott-graham-5fNmWej4tAA-unsplash.jpg";
 export { default as logoBlanco } from "./logo-legal-quester-blanco.svg";
 export { default as logoTipo } from "./logo-legal-questersvg.svg";
 export { default as menuCaret } from "./caret.svg";
+export { default as CalendarIcon } from "./calendar-icon.svg";
+export { default as shareIcon } from "./share.svg";
+export { default as heartOutlined } from "./heart-outlined.svg";
+export { default as heart } from "./heart.svg";
+
+export { default as eliminarIcon } from "./eliminar.svg";
+export { default as anyadirIcon } from "./anyadir.svg";
+export { default as saveIcon } from "./save-icon.svg";
+export { default as checkedIcon } from "./checked.svg";
+export { default as eliminarGreyIcon } from "./eliminar-grey.svg";

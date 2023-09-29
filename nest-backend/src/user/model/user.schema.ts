@@ -2,6 +2,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
 import { Proyecto } from 'src/project/model/project.schema';
+import { PreferencesSchema, Preferences } from './preferences.schema';
 
 @Schema()
 export class User {
@@ -95,8 +96,11 @@ export class User {
   @Prop({ default: false, required: true })
   isCompany: boolean;
 
+  @Prop([String])
+  curriculum: string[];
+
   @Prop()
-  curriculum: string;
+  numColegiado: string;
 
   @Prop([String])
   skills: string[];
@@ -119,6 +123,9 @@ export class User {
     idEnemy: Types.ObjectId;
     addedOn: Date;
   }[];
+
+  @Prop({ type: PreferencesSchema })
+  preferences: Preferences;
 }
 
 export type UserDocument = User & Document;

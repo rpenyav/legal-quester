@@ -6,3 +6,8 @@ export * from "./FormRegister";
 export * from "./FooterComponent";
 export * from "./protected/FormFillDataCandidate";
 export * from "./protected/FormFillDataCompany";
+export * from "./protected/ProjectsList";
+export * from "./LoadingComponent";
+export * from "./LoadingComponentSmall";
+export * from "./protected/BuscadorProyectos";
+export * from "./protected/SearchField";

@@ -1,0 +1,62 @@
+.wizard {
+  margin-top: 50px;
+  .wizard-container {
+    position: relative;
+  }
+
+  .custom-progress-bar {
+    margin-top: 50px;
+    background-color: #cccccc !important;
+  }
+
+  .default-bar {
+    background-color: #cccccc !important;
+  }
+  .step-bar1 {
+    background-color: #303581 !important;
+  }
+
+  .step-bar2 {
+    background-color: #4b51a1 !important;
+  }
+
+  .step-bar3 {
+    background-color: #6b6fc4 !important;
+  }
+
+  .step-labels {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    pointer-events: none; /* para que no interfieran con los clics en la barra de progreso */
+  }
+
+  .step-labels span {
+    /* ajusta esto según tus necesidades */
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+    margin-top: -35px;
+    width: 33.333%;
+  }
+
+  .btn-icon {
+    border-radius: 50%;
+    background-color: transparent;
+    border: 0px;
+    height: 29px;
+    padding: 0px !important;
+    line-height: 0px;
+    margin: 0px;
+    margin-top: -3px;
+  }
+  .btn-icon:hover {
+    background-color: rgb(226, 226, 226);
+  }
+
+  .icon-btn {
+    height: 25px;
+  }
+}

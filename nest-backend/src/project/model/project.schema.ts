@@ -5,14 +5,14 @@ import { User } from 'src/user/model/user.schema';
 
 @Schema()
 export class Proyecto {
-  @Prop({ unique: true })
-  id: string;
-
   @Prop()
   nombre: string;
 
   @Prop()
   descripcion: string;
+
+  @Prop()
+  fechaPublicacion: Date;
 
   @Prop()
   fechaInicio: Date;
@@ -30,8 +30,6 @@ export class Proyecto {
   candidatoSeleccionado?: User;
 
   // Campos nuevos
-  @Prop()
-  areaLegal: string;
 
   @Prop()
   estatus: string;
@@ -49,6 +47,9 @@ export class Proyecto {
   modalidadPago?: string;
 
   @Prop()
+  owner?: string;
+
+  @Prop()
   cliente?: string;
 
   @Prop()
@@ -58,7 +59,18 @@ export class Proyecto {
   etapasProyecto?: string[];
 
   @Prop()
+  cityOfProject?: string[];
+
+  @Prop()
+  typeOfCase?: string[];
+
+  @Prop()
+  areaLegal: string;
+  @Prop()
   jurisdiccion?: string;
+
+  @Prop()
+  surveyNumber?: string;
 
   @Prop([String])
   requisitosLegales?: string[];

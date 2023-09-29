@@ -1,10 +1,11 @@
-import { Usuario } from "./";
+import { Usuario } from "./usuario";
 
 export interface Proyecto {
-  id: string;
+  _id: string;
   nombre: string;
   descripcion: string;
   fechaInicio: Date;
+  fechaPublicacion: Date;
   fechaFin?: Date;
   habilidadesRequeridas: string[];
   candidatosAplicantes?: Usuario[];
@@ -21,4 +22,8 @@ export interface Proyecto {
   etapasProyecto?: string[];
   jurisdiccion?: string;
   requisitosLegales?: string[];
+  cityOfProject?: string[];
+  typeOfCase: string[];
+  owner: string;
+  surveyNumber: string;
 }
