@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">legal-quester</string>
+    <string name="title_activity_main">legal-quester</string>
+    <string name="package_name">com.legalquester.app</string>
+    <string name="custom_url_scheme">com.legalquester.app</string>
+</resources>
